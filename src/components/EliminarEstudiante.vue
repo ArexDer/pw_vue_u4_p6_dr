@@ -30,7 +30,7 @@
     flex-direction: column;
     align-items: center; /* Centrado horizontal */
     justify-content: flex-start;
-    background-color: #f9f9f9;
+    background-color: #220606;
     padding: 20px;
     margin: 0 auto;
     max-width: 600px;
