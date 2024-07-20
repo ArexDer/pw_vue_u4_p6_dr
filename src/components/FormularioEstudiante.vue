@@ -37,8 +37,9 @@
   </template>
   
   <script>
+  import {obtenerPorCedulaAxiosFachada, actualizarParcialFachada} from '../clients/clienteEstudiante.js'
   export default {
-    data() {
+    data() {   //paso a mi estudiante reactivo
       return {
         estudiante: {
           nombre: '',
@@ -50,15 +51,19 @@
       };
     },
     methods: {
-      consultar() {
-        // Lógica de consulta
+      //Lo pongo ASINCRONO Y EL AWAIT .... IMPORTANTE!!!!
+      async consultar() {
+        console.log(this.estudiante.cedula);
+        const data = await obtenerPorCedulaAxiosFachada(this.estudiante.cedula);
+        console.log(data);
       },
       actualizar() {
-        // Lógica de actualización
+
       }
     }
   };
   </script>
+
   
   <style scoped>
   .formulario-container {
