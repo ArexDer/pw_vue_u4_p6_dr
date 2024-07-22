@@ -12,11 +12,11 @@
             <input type="text" id="apellido" v-model="estudiante.apellido" />
           </li>
           <li class="campo">
-            <label for="dob">Fecha de Nacimiento:</label>
-            <input type="date" id="dob" v-model="estudiante.dob" />
+            <label for="fechaNacimientoI">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimientoI" v-model="estudiante.fechaNacimientoI" />
           </li>
           <li class="campo">
-            <label for="genero">Género:</label>
+            <label for="genero">Genero:</label>
             <select id="genero" v-model="estudiante.genero">
               <option value="M">Masculino</option>
               <option value="F">Femenino</option>
@@ -24,7 +24,7 @@
             </select>
           </li>
           <li class="campo">
-            <label for="cedula">Cédula:</label>
+            <label for="cedula">Cedula:</label>
             <input type="text" id="cedula" v-model="estudiante.cedula" />
           </li>
         </ul>
@@ -36,22 +36,26 @@
   </template>
   
   <script>
+   import {guardarFachada} from '../clients/clienteEstudiante.js'
   export default {
     data() {
       return {
         estudiante: {
           nombre: '',
           apellido: '',
-          dob: '',
+          fechaNacimientoI: '',
           genero: '',
           cedula: ''
         }
       };
     },
     methods: {
-      guardar() {
-        // Lógica de guardar
-        console.log('Estudiante guardado:', this.estudiante);
+      async guardar() {
+        const bodyEstudiante ={
+          nombre: this.estudiante.nombre, apellido: this.estudiante.apellido,
+           fechaNacimiento: "2024-01-08T12:10:00", genero: this.estudiante.genero, cedula: this.estudiante.cedula}
+        const data =await guardarFachada(bodyEstudiante)
+        console.log("Estudiante guardado Exisotsamente", data)
       }
     }
   };

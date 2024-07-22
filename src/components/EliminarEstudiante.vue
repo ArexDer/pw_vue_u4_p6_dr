@@ -10,6 +10,7 @@
   </template>
   
   <script>
+  import {eliminarFachada} from '../clients/clienteEstudiante.js'
   export default {
     data() {
       return {
@@ -17,8 +18,10 @@
       };
     },
     methods: {
-      eliminarEstudiante() {
-        // Lógica de eliminación
+      async eliminarEstudiante() {
+        
+        const data = await eliminarFachada(this.cedula);
+        console.log("Se elimino a:  ",data);
       }
     }
   };

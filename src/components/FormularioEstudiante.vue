@@ -13,7 +13,7 @@
           </li>
           <li class="campo">
             <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-            <input type="date" id="fechaNacimiento" v-model="estudiante.fechaNacimiento" />
+            <input type="date" id="fechaNacimiento" v-model="estudiante.fechaNacimiento"  />
           </li>
           <li class="campo">
             <label for="genero">Género:</label>
@@ -37,7 +37,7 @@
   </template>
   
   <script>
-  import {obtenerPorCedulaAxiosFachada, actualizarParcialFachada} from '../clients/clienteEstudiante.js'
+  import {obtenerPorCedulaAxiosFachada, actualizarFachada} from '../clients/clienteEstudiante.js'
   export default {
     data() {   //paso a mi estudiante reactivo
       return {
@@ -56,9 +56,22 @@
         console.log(this.estudiante.cedula);
         const data = await obtenerPorCedulaAxiosFachada(this.estudiante.cedula);
         console.log(data);
-      },
-      actualizar() {
+        console.log(data.nombre);
+        console.log(data.apellido);
 
+        this.estudiante.genero=data.genero
+        console.log(data.genero);
+        console.log(data.fechaNacimiento)
+
+      },
+      async actualizar() {
+        // FORMATO FECHA: "fechaNacimiento": "2024-01-08T12:10:00",
+        const bodyEstudiante ={
+          nombre: this.estudiante.nombre, apellido: this.estudiante.apellido,
+           fechaNacimiento: "2024-01-08T12:10:00", genero: this.estudiante.genero}
+       
+        const data=await actualizarFachada(this.estudiante.cedula, bodyEstudiante);
+        console.log(data)
       }
     }
   };

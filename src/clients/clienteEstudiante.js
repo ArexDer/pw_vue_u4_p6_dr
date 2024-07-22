@@ -63,8 +63,10 @@ const eliminar = async(cedula)=>{
     return data;
 }
 
+
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+//IMPORTANTE SOLO SI EL LLAMADO ES DEL I¿MISMO IP Y PUERTO
 
 //METODOS DE FACHADA
 //No se deberia poner directamente los metodos de la LOGICA.
