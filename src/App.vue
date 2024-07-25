@@ -1,22 +1,28 @@
 <template>
-  <div id="app">
-    <EstudiantePage />
-  </div>
+  
+
+    <router-view/>
+
 </template>
 
 <script>
-import EstudiantePage from '@/pages/EstudiantePage.vue';
+//YA CON EL RPUTER VIE NO ES NECESARIO PONER LA PAGINA PRINCIPAL, YA LA CARGA
+//import BienvenidaPage from '@/pages/BienvenidaPage.vue';
 
+
+/*
+SIEMPRE DEBO MANDAR LA PAGINA PRINCIPAL
+*/
 export default {
   name: 'App',
   components: {
-    EstudiantePage
+
   }
 };
 </script>
 
 <style>
-/* Aquí puedes agregar estilos globales si es necesario */
+
 
 
 </style>
