@@ -72,10 +72,11 @@
         console.log(data)
       }
     },
-    created(){
-      console.log(this.$route.params.estudiante.cedula)
-      if(this.$route.params.cedula !=='vacio'){
-        this.estudiante.cedula=this.$route.params.cedula; 
+     created(){
+      const cedula =this.$route.params.cedula
+      console.log(cedula)
+      if(cedula !=='vacio'){
+        this.estudiante.cedula=cedula; 
         this.consultar();
       }
     }
