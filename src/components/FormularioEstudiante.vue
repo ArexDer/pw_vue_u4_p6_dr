@@ -58,7 +58,6 @@
         console.log(data);
         console.log(data.nombre);
         console.log(data.apellido);
-
         this.estudiante.genero=data.genero
         console.log(data.genero);
         console.log(data.fechaNacimiento)
@@ -68,10 +67,16 @@
         // FORMATO FECHA: "fechaNacimiento": "2024-01-08T12:10:00",
         const bodyEstudiante ={
           nombre: this.estudiante.nombre, apellido: this.estudiante.apellido,
-           fechaNacimiento: "2024-01-08T12:10:00", genero: this.estudiante.genero}
-       
+          fechaNacimiento: "2024-01-08T12:10:00", genero: this.estudiante.genero}
         const data=await actualizarFachada(this.estudiante.cedula, bodyEstudiante);
         console.log(data)
+      }
+    },
+    created(){
+      console.log(this.$route.params.estudiante.cedula)
+      if(this.$route.params.cedula !=='vacio'){
+        this.estudiante.cedula=this.$route.params.cedula; 
+        this.consultar();
       }
     }
   };
@@ -82,7 +87,7 @@
   .formulario-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrado horizontal */
+    align-items: center; 
     justify-content: flex-start;
     background-color: #f9f9f9;
     padding: 20px;
@@ -103,9 +108,9 @@
   }
   
   .formulario-campos {
-    list-style-type: none; /* Elimina los puntos de la lista */
-    padding: 0; /* Elimina el padding predeterminado */
-    margin: 0; /* Elimina el margen predeterminado */
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
   }
   
   .campo {

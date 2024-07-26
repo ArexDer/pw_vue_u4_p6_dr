@@ -14,8 +14,12 @@ import EliminarEstudiante from '@/components/EliminarEstudiante.vue'
 import FormularioEstudiante from '@/components/FormularioEstudiante.vue'
 import NuevoFormularioEstudiante from '@/components/NuevoFormularioEstudiante.vue'
 //import EstudiantePage from '@/pages/EstudiantePage.vue'
+import NotFoundPage from '@/pages/NotFoundPage.vue'
+
+
 
 /*
+
 Ahora declaramos un arreglo de objetos, y estos representan a cada pagina
 */
 const routes =[ //en formato JSON aqui el http:// YA VIENE DADO POR EL SERVIDOR
@@ -35,7 +39,7 @@ const routes =[ //en formato JSON aqui el http:// YA VIENE DADO POR EL SERVIDOR
 
     },
     {
-        path: '/formularioEstudiantepage',
+        path: '/formularioEstudiantepage/:cedula', //Consulta    Actualziar
     component: FormularioEstudiante 
 
     },
@@ -45,8 +49,12 @@ const routes =[ //en formato JSON aqui el http:// YA VIENE DADO POR EL SERVIDOR
 
     },
     {
-        path: '/nuevoEstudiantepage',
+        path: '/nuevoEstudiantepage/',
     component: NuevoFormularioEstudiante 
+    },
+    {
+        path: '/:pathMatch(.*)*',      //Wildcat cuando no encuentra la pagina
+    component: NotFoundPage 
     }
 
 ]

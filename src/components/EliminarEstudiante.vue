@@ -28,6 +28,7 @@
   </script>
   
   <style scoped>
+  
   .formulario-container {
     display: flex;
     flex-direction: column;
@@ -41,6 +42,7 @@
   
   h1 {
     margin-bottom: 20px;
+    background: white;
   }
   
   .campo-cedula {
@@ -60,6 +62,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-bottom: 10px;
+    background: white;
   }
   
   button {

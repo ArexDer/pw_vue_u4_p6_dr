@@ -1,27 +1,23 @@
 <template>
   
-
+  <NavBar/>
     <router-view/>
 
 </template>
 
 <script>
-//YA CON EL RPUTER VIE NO ES NECESARIO PONER LA PAGINA PRINCIPAL, YA LA CARGA
-//import BienvenidaPage from '@/pages/BienvenidaPage.vue';
 
-
-/*
-SIEMPRE DEBO MANDAR LA PAGINA PRINCIPAL
-*/
+import NavBar from './components/NavBar.vue';
 export default {
   name: 'App',
   components: {
+    NavBar,
 
   }
 };
 </script>
 
-<style>
+<style >
 
 
 
