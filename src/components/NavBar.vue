@@ -2,7 +2,15 @@
     <div>
         <router-link to="/">Bienvenida</router-link>
         <router-link to="nuevoEstudiantepage">Estudiante Actualziar</router-link>
+        <router-link :to="{ name: 'prueba', params:{ cedula: '123' }, query: { edad: '6666', ciudad:'quito' } }">Estudiante Crear</router-link>
+
+        <!--
         <router-link to="formularioEstudiantepage/vacio">Estudiante Crear</router-link>
+        -->
+        <!--  IMPORTANTE PATH Y REQU
+        <router-link to="formularioEstudiantepage/123?edad=15&ciudad=quito">Estudiante Crear</router-link>
+        Con un requestParam
+        -->
         <router-link to="eliminarEstudiantepage">Estudiante Eliminar</router-link>
 </div>
 </template>

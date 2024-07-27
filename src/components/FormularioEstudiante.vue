@@ -72,9 +72,9 @@
         console.log(data)
       }
     },
-     created(){
+    created(){
       const cedula =this.$route.params.cedula
-      console.log(cedula)
+      console.log(this.$route) //aqui para ver los params, query.
       if(cedula !=='vacio'){
         this.estudiante.cedula=cedula; 
         this.consultar();
